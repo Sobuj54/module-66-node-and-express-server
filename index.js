@@ -7,8 +7,8 @@ app.use(cors());
 
 const users = [
   { id: 1, name: "sabana", gmail: "sabana@gmail.com" },
-  { id: 1, name: "sabnoor", gmail: "sabnoor@gmail.com" },
-  { id: 1, name: "sabila", gmail: "sabila@gmail.com" },
+  { id: 2, name: "sabnoor", gmail: "sabnoor@gmail.com" },
+  { id: 3, name: "sabila", gmail: "sabila@gmail.com" },
 ];
 
 app.get("/", (req, res) => {
@@ -17,6 +17,11 @@ app.get("/", (req, res) => {
 
 app.get("/users", (req, res) => {
   res.send(users);
+});
+
+app.post("/users", (req, res) => {
+  console.log("users hitting");
+  console.log(req.body);
 });
 
 app.listen(port, () => {
