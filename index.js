@@ -3,7 +3,10 @@ const cors = require("cors");
 const app = express();
 const port = process.env.PORT || 5000;
 
+// middleware
 app.use(cors());
+// this middleware will fix req.body = undefined problem
+app.use(express.json());
 
 const users = [
   { id: 1, name: "sabana", gmail: "sabana@gmail.com" },
